@@ -1,0 +1,24 @@
+[submodule "libs/glm"]
+	path = libs/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "libs/utfcpp"]
+	path = libs/utfcpp
+	url = https://github.com/nemtrif/utfcpp.git
+[submodule "libs/freeimage-cmake"]
+	path = libs/freeimage-cmake
+	url = https://github.com/ivorne/freeimage-cmake.git
+[submodule "libs/glew-cmake"]
+	path = libs/glew-cmake
+	url = https://github.com/Perlmint/glew-cmake.git
+[submodule "libs/glfm"]
+	path = libs/glfm
+	url = https://github.com/ivorne/glfm.git
+[submodule "libs/glfw"]
+	path = libs/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "libs/filesystem"]
+	path = libs/filesystem
+	url = https://github.com/gulrak/filesystem.git
+[submodule "libs/soloud"]
+	path = libs/soloud
+	url = https://github.com/ivorne/soloud.git

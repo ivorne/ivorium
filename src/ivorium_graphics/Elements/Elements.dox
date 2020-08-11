@@ -1,0 +1,32 @@
+/**
+
+\defgroup Elements Elements
+
+### Node parameters:
+	Initialization parameters:
+		- Set by higher-level code from outside of element structure.
+		- Value is used and dirty flag is cleared by node implementation.
+		- Depend on parents initializatio parameters.
+		- Affects own and parents synthesized parameters.
+		- Affects childrens inherited parameters.
+	
+	Synthesized parameters:
+		- Set by node implementation in first pass.
+		- Value is read and dirty flag is cleared by parent.
+		- Depend on own and parents initialization parameters.
+		- Affects parents synthesized parameters.
+		- Affects childrens inherited parameters. 
+	
+	Inherited parameters:
+		- Set by parent in second pass.
+		- Value is used and dirty flag is cleared by node implementation.
+		- Depend on parents initialization parameters.
+		- Depend on parents synthesized parameters.
+		- Affects childrens inherited parameters.
+	
+	Internal state:
+		- This is what will be actually displayed.
+		- Set by node implementation in first and/or second pass.
+		- Depends on initialization parameters, synthesized parameters, and inherited parameters.
+
+*/

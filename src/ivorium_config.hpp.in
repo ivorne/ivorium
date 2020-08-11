@@ -1,0 +1,20 @@
+#pragma once
+
+// OpenGL and windowing platform
+#cmakedefine01 IV_GLPLATFORM_GLFW
+#cmakedefine01 IV_GLPLATFORM_GLFM
+
+// filesystem platform
+#cmakedefine01 IV_FSPLATFORM_XDG
+#cmakedefine01 IV_FSPLATFORM_WIN
+#cmakedefine01 IV_FSPLATFORM_ANDROID
+#cmakedefine01 IV_FSPLATFORM_EMSCRIPTEN
+
+// other
+#cmakedefine01 IV_ENABLE_ANDROID_JNI
+#cmakedefine01 IV_TEXTOUT_COUT
+#cmakedefine01 IV_ENABLE_VALGRIND
+#cmakedefine01 IV_WEBGL_USED
+#cmakedefine01 IV_ENABLE_TRANSFORM_FEEDBACK
+#cmakedefine01 IV_CONFIG_FS_ENABLED
+
