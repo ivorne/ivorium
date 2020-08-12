@@ -8,6 +8,11 @@ namespace iv
 {
 
 /**
+    \brief Abstract class that represents root of a scene graph and can render it.
+    
+    Add \ref SlotChild instances and then render them using \ref Camera::render_scene.
+    Camera can use model matrix of one \ref Elem in scene graph as a view matrix - rendering scene from the point of view of that \ref Elem.
+    To be fully functional, a child needs to implement all virtual methods of \ref ElementRenderer - it decides on order in which \ref Renderables are rendered.
 */
 class Camera : public Slot, private ElementRenderer
 {

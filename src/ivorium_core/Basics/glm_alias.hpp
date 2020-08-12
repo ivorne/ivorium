@@ -19,7 +19,8 @@ using int2 = glm::tvec2< int >;
 using int3 = glm::tvec3< int >;
 
 using float2 = glm::tvec2< float >;
-using float3 = glm::tvec3< float >;
+//using float3 = glm::tvec3< float >;
+using float3 = glm::vec3;
 using float4 = glm::tvec4< float >;
 
 using bool2 = glm::tvec2< bool >;

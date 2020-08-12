@@ -43,6 +43,7 @@ private:
 };
 
 /**
+    \ingroup Elements
     This whole layouting algorithm does not work well when there are multiple font sizes on one line, but that is bad typography anyway, so it should not be a problem.
 */
 class TextLayout : public VectorChildrenElem< TextSegment >, public SlotChild

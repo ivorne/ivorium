@@ -7,7 +7,9 @@ namespace iv
 {
 
 class Divider;
-
+/**
+    \ingroup Elements
+*/
 class DividerSlot : public Slot
 {
 public:

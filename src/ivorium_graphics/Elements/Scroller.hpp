@@ -10,6 +10,10 @@ namespace iv
 {
 
 /**
+    Scroller is a SlotChild that can contain one other SlotChild.
+    Scroller reacts to mouse and touch input, scrolling inner SlotChild vertically.
+    Parts of inner SlotChild that reach outside of outer SlotChild are clamped.
+    This should be extended by another class to provide decorators, utilizing information in contained attributes.
 */
 class Scroller : public OneChildElem< SlotChild >, public SlotChild, private FixedUpdateClient, private FrameUpdateClient, protected PrivValAttr_Owner
 {

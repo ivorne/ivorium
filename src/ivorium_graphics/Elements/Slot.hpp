@@ -7,6 +7,7 @@ namespace iv
 {
 
 /**
+    \ingroup Elements
 */
 class SlotChild : public Pickable
 {

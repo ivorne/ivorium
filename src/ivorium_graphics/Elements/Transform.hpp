@@ -8,7 +8,7 @@ namespace iv
 {
 
 /**
-    Container of type Slot.
+    \ingroup Elements
     Passes prefsize and size through.
     Changes global transform.
 */

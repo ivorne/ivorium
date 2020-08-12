@@ -8,6 +8,7 @@ namespace iv
 {
 
 /**
+    \ingroup Elements
     If a dimension has nullopt prefsize value, then that Prefsize will use childs prefsize for that dimension.
 */
 class Prefsize : public OneChildElem< SlotChild >, public SlotChild

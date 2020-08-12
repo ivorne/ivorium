@@ -1,32 +1,72 @@
 /**
 
 \defgroup Elements Elements
+\brief Classes that make up scene graph.
 
-### Node parameters:
-	Initialization parameters:
-		- Set by higher-level code from outside of element structure.
-		- Value is used and dirty flag is cleared by node implementation.
-		- Depend on parents initializatio parameters.
-		- Affects own and parents synthesized parameters.
-		- Affects childrens inherited parameters.
-	
-	Synthesized parameters:
-		- Set by node implementation in first pass.
-		- Value is read and dirty flag is cleared by parent.
-		- Depend on own and parents initialization parameters.
-		- Affects parents synthesized parameters.
-		- Affects childrens inherited parameters. 
-	
-	Inherited parameters:
-		- Set by parent in second pass.
-		- Value is used and dirty flag is cleared by node implementation.
-		- Depend on parents initialization parameters.
-		- Depend on parents synthesized parameters.
-		- Affects childrens inherited parameters.
-	
-	Internal state:
-		- This is what will be actually displayed.
-		- Set by node implementation in first and/or second pass.
-		- Depends on initialization parameters, synthesized parameters, and inherited parameters.
+
+### About
+This group contains classes that can be directly used in scene graph. It does not contain abstract and other incomplete classes.
+
+Root of scene graph can be any class that inherits \ref iv::Camera - currently only \ref iv::FixedOrder_Camera.
+Children are added to scene using \ref iv::OneChildElem::createChild and similar methods.
+Some Elements act as containers, some are renderable.
+Most common type of parent / child relationship is \ref iv::Slot / \ref iv::SlotChild, but there is also \ref iv::Divider / \ref iv::DividerSlot and \ref iv::TextLayout and \ref iv::TextSegment and more can be implemented if needed.
+
+### Example usage
+\code{.cpp}
+
+iv::FixedOrder_Camera * camera;
+
+void init( iv::Instance * inst )
+{
+    // instantiate scene root
+    camera = new iv::FixedOrder_Camera( inst, iv::RenderTarget::Geometry( iv::float2( 1366, 768 ), 1.0 ) );
+    
+    // lifetime of subelements created using createChild will be tied to lifetime of camera
+    auto border = camera->createChild< iv::Border >();   // iv::Border without changed attributes will position its content to the center without resizing it if not necessary.
+    auto image = border->createChild< iv::Image >()
+                    ->filename( "/ivorium_graphics/generic/stone.png" );
+}
+
+void render()
+{
+    camera->render_scene();
+}
+
+void deinit()
+{
+    delete camera;
+}
+
+\endcode
+
+### About scene tree pre-render refresh
+Each frame, before all the renderables are rendered, whole scene tree is traversed and all values are updated.
+This refresh has three stages: down-phase of first pass, up-phase of first pass and second pass.
+    1. Down-phase of first pass is not that important, it mainly refreshes \ref iv::SlotChild::expectedSize which is not used by many Elements. Tree is traversed from root to children.
+    2. Up-phase of first pass aggregates so called **synthesized parameters**. It is mainly \ref iv::SlotChild::preferredSize which is used by containers to resize their layouts. Tree is traversed from children to root in this stage. Renderable Elements also assign themselves to render queue in this stage (they must register each frame).
+    3. In second pass, containers assign so called **inherited parameters** to their children. Best example of such parameter is \ref iv::SlotChild::size. Tree is traversed from children to root again. The second pass is not called each frame on each Element, Elements have to request second pass during first pass using \ref iv::ElementRenderer::QueueSecondPass and then call \ref iv::ElementRenderer::DequeueSecondPass during second pass.
+
+Most attributes used in scene tree are \ref iv::DirtyAttr.
+Apart from given value, it contains dirty flag that is set to true each time value is modified.
+That can be used to optimize recomputations during pre-render scene tree refresh.
+
+Initialization parameters:
+    - Examples: \ref iv::Image::attr_filename, \ref iv::Prefsize::attr_prefsizeX, \ref iv::Transform::attr_position
+    - Set from outside of element structure by user code.
+    - Dirty flag is cleared by element itself.
+
+Synthesized parameters:
+    - Examples: \ref iv::SlotChild::preferredSize
+    - Set by element itself during up-phase of first pass.
+    - Depends on synthesized parameters of children and/or own initialization parameters.
+    - Dirty flag is cleared by parent that uses the value to refresh its own synthesized parameters.
+
+Inherited parameters:
+    - Examples: \ref iv::SlotChild::size, \ref iv::Elem::modelTransform, \ref iv::Elem::scissor, \ref iv::DividerSlot::attr_lowerOrder, \ref iv::DividerSlot::attr_higherOrder, \ref iv::TextSegment::location
+    - Set by parent in second pass.
+    - Depends on inherited, synthesized and initialization parameters of parent.
+    - Dirty flag is cleared by element itself which uses the value to set inherited parameters of its children or for rendering.
+
 
 */

@@ -7,7 +7,8 @@ namespace iv
 {
 
 /**
-    Probably rename this to Pickable_InputNode.
+    Basically a common base for buttons.
+    Proper PickableSlot implementation should visually react to input attribute changes in \ref PickableSlot::input.
 */
 class PickableSlot : public Slot, public Position_InputNode::Tester
 {

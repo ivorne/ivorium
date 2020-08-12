@@ -8,6 +8,7 @@ namespace iv
 {
 
 /**
+    \ingroup Elements
     Does nothing by default.
     Usually is used to give child item its desired size (and usually aspect) and anchor it somewhere in parent container.
     Or can be used to resize child item to whatever size but to keep aspect.

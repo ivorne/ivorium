@@ -12,6 +12,7 @@ namespace iv
 {
 
 /**
+    \ingroup Elements
 */
 class Image : public Elem, public SlotChild, public TranslucentElem, public Renderable
 {

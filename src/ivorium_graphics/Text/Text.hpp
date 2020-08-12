@@ -9,6 +9,9 @@
 namespace iv
 {
 
+/**
+    \ingroup Elements
+*/
 class Text : public Elem, public TextSegment, public TranslucentElem, public Renderable
 {
 public:

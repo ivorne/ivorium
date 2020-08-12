@@ -186,3 +186,6 @@ if( IV_GLPLATFORM_GLFM )
 	target_link_libraries( ivorium PUBLIC glfm )
 	
 endif()
+
+#------------- doxygen --------------------------------
+include( "doxygen/ivorium_doc.cmake" )

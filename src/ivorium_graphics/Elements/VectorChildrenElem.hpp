@@ -6,6 +6,8 @@
 namespace iv
 {
 
+/**
+*/
 template< class ChildT >
 class VectorChildrenElem : public Elem
 {

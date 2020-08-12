@@ -8,6 +8,7 @@ namespace iv
 {
 
 /**
+    \ingroup Elements
 */
 class Border : public OneChildElem< SlotChild >, public SlotChild
 {
