@@ -1,6 +1,6 @@
 # Ivorium
 Ivorium is a slim modular game development framework written in C++ that aims to provide tools and guidelines for smart, scalable and robust game development process.
-It allows you to ommit, modify or completely rewrite most of its parts in case their implementation does not suit your particular game architecture.
+It allows you to ommit, modify or completely rewrite most of its parts in case their implementations do not suit your particular game architecture.
 All new code can be easily integrated with the rest of the framework in order to leverage its robust debugging capabilities and to cleanly interface with existing code.
 In contrast with traditional game engines that focus mostly on providing graphics, physics and other multimedia and simulation capabilities, Ivorium is mainly concerned with clean, robust and scalable gameplay development.
 
