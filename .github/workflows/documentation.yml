@@ -30,7 +30,7 @@ jobs:
 
     # Deploy results to subdirectory on github pages
     - name: Deploy
-      uses: peaceiris/actions-gh-pages@main
+      uses: peaceiris/actions-gh-pages@v3.7.0-8
       with:
         deploy_key: ${{ secrets.DEPLOY_KEY }}
         publish_dir: ./html
