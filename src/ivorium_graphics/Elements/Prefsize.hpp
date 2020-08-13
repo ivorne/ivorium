@@ -11,7 +11,7 @@ namespace iv
     \ingroup Elements
     \brief Container that can override preferred size of its child.
     
-    If a dimension has nullopt prefsize value, then that Prefsize will use childs prefsize for that dimension.
+    If a dimension has empty (std::nullopt) prefsize value, then that Prefsize will not override that axis.
 */
 class Prefsize : public OneChildElem< SlotChild >, public SlotChild
 {
@@ -36,7 +36,7 @@ using Elem::instance;
     Prefsize *                          prefsizeX( std::optional< float > );
     Prefsize *                          prefsizeY( std::optional< float > );
     Prefsize *                          prefsizeZ( std::optional< float > );
-    Prefsize *                          prefsizeScale( float3 ); ///< \b Multiplies prefsize by this value before assigning it.
+    Prefsize *                          prefsizeScale( float3 ); ///< \brief Multiplies prefsize by this value before assigning it.
 
 protected:
     // Elem

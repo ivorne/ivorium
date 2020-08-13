@@ -13,6 +13,7 @@ namespace iv
 
 /**
     \ingroup Elements
+    \brief Basic element that displays a texture. Has many optional configuration parameters.
 */
 class Image : public Elem, public SlotChild, public TranslucentElem, public Renderable
 {

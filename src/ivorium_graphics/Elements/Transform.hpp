@@ -9,7 +9,7 @@ namespace iv
 
 /**
     \ingroup Elements
-    \ref Container that allows us to directly modify model matrix of its child. Usable both in UI compositing and in world views.
+    \brief Container that allows us to directly modify model matrix of its child. Usable both in UI compositing and in world views.
     
     Works in two modes, depending on value of \ref Transform::propagateSize:
     

@@ -12,6 +12,8 @@ namespace iv
 
 /**
     \ingroup Elements
+    \brief A camera that shows renderables in fixed order, no Z sorting.
+    
     Renders elements in the order they were added to the ElementRenderer - order they are placed in the element tree.
     This uses depth buffer for opaque elements, so they will not really be rendered in given order, but they will appear as if they were.
     Opaque elements are in fact grouped by shader id and texture id to have less context switches.
