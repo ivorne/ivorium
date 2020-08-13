@@ -15,6 +15,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - name: Setup environment
+      run: sudo apt-get install cmake doxygen libasound2-dev libgl-dev libxrandr-dev libxinerama-dev libx11-dev libxcursor-dev libxi-dev libxext-dev
+          
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout
       uses: actions/checkout@v2
@@ -23,10 +26,14 @@ jobs:
 
     # Generate documentation using CMake and doxygen
     - name: Generate documentation
-      uses: docker://lpenz/ghaction-cmake:v0.9
-      with:
-        dependencies_debian: doxygen libasound2-dev libgl-dev libxrandr-dev libxinerama-dev libx11-dev libxcursor-dev libxi-dev libxext-dev
-        build_command: make ivorium_doc
+      run: cmake . && make ivorium_doc
+      
+    # Generate documentation using CMake and doxygen
+    #- name: Generate documentation
+    #  uses: docker://lpenz/ghaction-cmake:v0.9
+    #  with:
+    #    dependencies_debian: doxygen libasound2-dev libgl-dev libxrandr-dev libxinerama-dev libx11-dev libxcursor-dev libxi-dev libxext-dev
+    #    build_command: make ivorium_doc
 
     # Deploy results to subdirectory on github pages
     - name: Deploy
