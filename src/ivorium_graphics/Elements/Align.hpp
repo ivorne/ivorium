@@ -9,9 +9,15 @@ namespace iv
 
 /**
     \ingroup Elements
-    Does nothing by default.
-    Usually is used to give child item its desired size (and usually aspect) and anchor it somewhere in parent container.
-    Or can be used to resize child item to whatever size but to keep aspect.
+    \brief Container providing special behaviors related to relative alignment of its child.
+    
+    Use of \ref Align::Border is encouraged for simple positioning tasks over Align (not because performance, but because it covers more usual use cases).
+    
+    Typical core use cases:
+      1. Simple alignment - \ref Align::dontExpand is set to true - Child retains its preferred size if possible and is positioned relatively inside according to \ref Align::innerAnchor size.
+      2. Keep aspect ratio - \ref Align::keepAspect is set to true - Child can be shrinked or expanded according to size of its parent, but it will always retain its aspect ration by reducing its size along some axes. \ref Align::innerAnchor determines relative positioning along those reduced axes.
+      3. Simple alignment and keep aspect ratio - Both \ref Align::dontExpand and \ref Align::keepAspect are set to true - Child does not expand above its preferred size and when it shrinks due to small parent container, it retains its preferred size.
+      4. Scale child instead of resizing - \ref Align::resizeScales is set to true - Child always gets its preferred size (on the inside), but is then scaled in order to fit into available space. This can be combined with the above use cases but it can also be used on its own.
 */
 class Align : public OneChildElem< SlotChild >, public SlotChild
 {

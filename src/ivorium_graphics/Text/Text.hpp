@@ -11,6 +11,7 @@ namespace iv
 
 /**
     \ingroup Elements
+    \brief Basic text element, needs to be supplied font path.
 */
 class Text : public Elem, public TextSegment, public TranslucentElem, public Renderable
 {

@@ -9,6 +9,8 @@ namespace iv
 
 /**
     \ingroup Elements
+    \brief Container that can override preferred size of its child.
+    
     If a dimension has nullopt prefsize value, then that Prefsize will use childs prefsize for that dimension.
 */
 class Prefsize : public OneChildElem< SlotChild >, public SlotChild
@@ -23,7 +25,7 @@ using Elem::instance;
     DirtyAttr< std::optional< float > > attr_prefsizeY;
     DirtyAttr< std::optional< float > > attr_prefsizeZ;
     
-    DirtyAttr< float3 >                 attr_prefsizeScale;     ///< Applies scale on prefsize of all axes. Does not matter if the prefsize is overriden or synthesized.
+    DirtyAttr< float3 >                 attr_prefsizeScale;
     
 // utility methods
     // Elem
@@ -34,7 +36,7 @@ using Elem::instance;
     Prefsize *                          prefsizeX( std::optional< float > );
     Prefsize *                          prefsizeY( std::optional< float > );
     Prefsize *                          prefsizeZ( std::optional< float > );
-    Prefsize *                          prefsizeScale( float3 );
+    Prefsize *                          prefsizeScale( float3 ); ///< \b Multiplies prefsize by this value before assigning it.
 
 protected:
     // Elem

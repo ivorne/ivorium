@@ -9,6 +9,13 @@ namespace iv
 
 /**
     \ingroup Elements
+    \brief Container that adds margins around child, allowing wide variety of positioning options inside parent.
+    
+    When some borders values are left unset, then the border stretches automatically to allow child to have its preferred size along that axis.
+    
+    Typical use cases:
+        1. Transparent borders around child - All borders along useful axes are set to 0 or higher value. Child is stretched or shrinked to fill the remaining space inside.
+        2. Align and offset child - Leave at least one border unset (std::nullopt) around each useful axis. Child will get its preferred size (if there is enough space) and child will be position with given offset along sides that have border set to a valid value. If neither border along one axis is set, then the child will be centered along that axis.
 */
 class Border : public OneChildElem< SlotChild >, public SlotChild
 {

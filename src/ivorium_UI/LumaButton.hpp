@@ -8,7 +8,7 @@ namespace iv
 
 /**
     \ingroup Elements
-    \brief Flexible base for variously styled buttons. Needs some configuration to work.
+    \brief Flexible base for variously styled buttons that needs to be supplied multiple textures.
     
     At least \ref LumaButton::sufrace should be set.
     \ref LumaButton::hot is nice addition for visual responsiveness and \ref LumaButton::overlay should contain foreground graphics - symbols, glyphs or an icon.

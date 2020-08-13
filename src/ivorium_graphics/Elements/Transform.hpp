@@ -9,8 +9,12 @@ namespace iv
 
 /**
     \ingroup Elements
-    Passes prefsize and size through.
-    Changes global transform.
+    \ref Container that allows us to directly modify model matrix of its child. Usable both in UI compositing and in world views.
+    
+    Works in two modes, depending on value of \ref Transform::propagateSize:
+    
+    1. When \ref Transform::propagateSize is set to true, then Transform behaves basically like \ref Slot that can have only one child and it can apply transform to child without either parent or the child really knowing about it. Transform does not step into \ref SlotChild::size negotiation between parent and child node. This mode is useful for UI composition.
+    2. When \ref Transform::propagateSize is set to false, then Transform does not even try to fit child into parent container. \ref SlotChild::preferredSize 0 is requested from parent and child gets its requested \ref SlotChild::preferredSize. This mode is useful in world views, when child node does not necessarily need to fit inside parent node.
 */
 class Transform : public OneChildElem< SlotChild >, public SlotChild
 {

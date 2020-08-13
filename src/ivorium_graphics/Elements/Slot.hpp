@@ -7,7 +7,6 @@ namespace iv
 {
 
 /**
-    \ingroup Elements
 */
 class SlotChild : public Pickable
 {
@@ -42,7 +41,11 @@ ClientMarker cm;
 
 
 /**
-    Slot renders children in order in which they are in stored vector.
+    \ingroup Elements
+    \brief Container that can put multiple \ref SlotChild objects in one place.
+    
+    All children get the same transform matrix and size.
+    Children are rendered in order in which they were assigned to Slot.
 */
 class Slot : public VectorChildrenElem< SlotChild >, public SlotChild
 {

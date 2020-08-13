@@ -8,7 +8,7 @@ namespace iv
 
 /**
     \ingroup Elements
-    \brief A window-like frame that needs to be supplied a texture path.
+    \brief A window-like scrollable frame that needs to be supplied a texture.
     
     Has vertically scrolling content implemented using \ref LumaScroller.
     Just set texture path to \ref LumaFrame::frame and set \ref LumaFrame::frameWidth and add children to \ref LumaFrame::child and everything should work.

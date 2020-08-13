@@ -6,9 +6,9 @@
 namespace iv
 {
 
-class Divider;
 /**
     \ingroup Elements
+    \brief A Slot that can be placed inside a \ref Divider.
 */
 class DividerSlot : public Slot
 {
@@ -37,7 +37,37 @@ ClientMarker cm;
     DividerSlot *           higherOrder( unsigned );
 };
 
-
+/**
+    \ingroup Elements
+    \brief Container that divides its space between children according to their priorities.
+    
+    Axis along which the space will be divided must be set.
+    Children with higher priority (lower order) will get required space before children with lower priority (higher order).
+    Each child has two orders - \ref DividerSlot::lowerOrder is used when the slot is smaller than its preferred size and \ref DividerSlot::higherOrder is used to allow child to resize above its preferred size.
+    
+    Example:
+    \code{.cpp}
+    auto divider = this->createChild< iv::Divider >()
+        ->axis( iv::Axis::X )
+        ->axisOrder( iv::AxisOrder::Incremental );
+    
+    // green square that will have higher priority before it reaches its preferred size
+    divider->createChild< iv::DividerSlot >()
+        ->lowerOrder( 0 )
+        ->higherOrder( 2 )
+        ->createChild< iv::Image >()
+            ->filename( "/ivorium_graphics/generic/white.png" )
+            ->colorTransform( iv::ColorTransform::Scale( 0, 1, 0, 1 ) );
+    
+    // blue square with lower priority; but once both squares reach their preferred size, they will both resize with the same speed (because their higherOrder is equal)
+    divider->createChild< iv::DividerSlot >()
+        ->lowerOrder( 1 )
+        ->higherOrder( 2 )
+        ->createChild< iv::Image >()
+            ->filename( "/ivorium_graphics/generic/white.png" )
+            ->colorTransform( iv::ColorTransform::Scale( 0, 0, 1, 1 ) );
+    \endcode
+*/
 class Divider : public VectorChildrenElem< DividerSlot >, public SlotChild
 {
 public:
