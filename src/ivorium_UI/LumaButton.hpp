@@ -7,8 +7,12 @@ namespace iv
 {
 
 /**
-    If enabled, uses LumaStyle::highlight and LumaStyle::on_highlight colors.
-    If disabled, uses LumaStyle::surface and LumaStyle::on_surface colors.
+    \ingroup Elements
+    \brief Flexible base for variously styled buttons. Needs some configuration to work.
+    
+    At least \ref LumaButton::sufrace should be set.
+    \ref LumaButton::hot is nice addition for visual responsiveness and \ref LumaButton::overlay should contain foreground graphics - symbols, glyphs or an icon.
+    
 */
 class LumaButton : public PickableSlot, public LumaListener, public TranslucentElem
 {
@@ -48,19 +52,19 @@ using PickableSlot::instance;
         Color are rotated from NeutralColor to surface or highlight color.
         Base graphics for the button.
     */
-    DirtyAttr< ResourcePath >           attr_surface;
+    DirtyAttr< ResourcePath > attr_surface;
     
     /**
         Displayed on top of everything.
         Colors are rotated from NeutralColor to on_surface or on_highlight color.
     */
-    DirtyAttr< ResourcePath >           attr_overlay;
+    DirtyAttr< ResourcePath > attr_overlay;
     
     /**
         Displayed on top of surface during hover and duration.
         Colors are rotated from NeutralColor to surface or highlight color.
     */
-    DirtyAttr< ResourcePath >           attr_hot;
+    DirtyAttr< ResourcePath > attr_hot;
     
 protected:
     // Elem

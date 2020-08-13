@@ -6,6 +6,11 @@ namespace iv
 {
 
 /**
+    \ingroup Elements
+    \brief Vertical scroller with simple graphics.
+    
+    This class puts visual decorators on top of basic \ref Scroller functionality - mainly slider on right side.
+    Use \ref LumaFrame if you need visible borders around the scroller.
 */
 class LumaScroller : public ProtectedSlot, protected PrivValAttr_Owner
 {

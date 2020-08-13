@@ -7,6 +7,11 @@ namespace iv
 {
 
 /**
+    \ingroup Elements
+    \brief A window-like frame that needs to be supplied a texture path.
+    
+    Has vertically scrolling content implemented using \ref LumaScroller.
+    Just set texture path to \ref LumaFrame::frame and set \ref LumaFrame::frameWidth and add children to \ref LumaFrame::child and everything should work.
 */
 class LumaFrame : public iv::ProtectedSlot, protected iv::PrivValAttr_Owner
 {
@@ -22,7 +27,7 @@ using iv::ProtectedSlot::instance;
 
     iv::DirtyAttr< iv::ResourcePath >           attr_frame;
     iv::DirtyAttr< float >                      attr_frameWidth;
-    iv::DirtyAttr< bool >                       attr_open;      ///< When set to true, frame shrinks using short animation.
+    iv::DirtyAttr< bool >                       attr_open;      ///< If frame should be visible (open). There is a short transition between open and closed state.
     
     iv::PrivValAttr< iv::SlotChild * >          child;
     

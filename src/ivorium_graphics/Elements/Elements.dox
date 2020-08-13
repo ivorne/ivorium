@@ -1,7 +1,7 @@
 /**
 
 \defgroup Elements Elements
-\brief Classes that make up scene graph.
+\brief Scene graph nodes.
 
 
 ### About

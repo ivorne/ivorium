@@ -5,6 +5,12 @@
 namespace iv
 {
 
+/**
+    \ingroup Elements
+    \brief Simple rectangular button.
+    
+    Input events are generated in PickableSlot::input (Rectangle_LumaButton indirectly inherits PickableSlot).
+*/
 class Rectangle_LumaButton : public LumaButton
 {
 public:
