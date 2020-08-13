@@ -25,7 +25,7 @@ jobs:
     - name: Generate documentation
       uses: docker://lpenz/ghaction-cmake:v0.9
       with:
-        dependencies_debian: doxygen libasound2-dev libgl-dev
+        dependencies_debian: doxygen libasound2-dev libgl-dev libxrandr-dev
         build_command: make ivorium_doc
 
     # Deploy results to subdirectory on github pages
