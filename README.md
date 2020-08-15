@@ -32,3 +32,9 @@ Ivorium is in early stages of its transition to open-source. Documentation is cu
 This project is open to contributions with some limitations. Documentation of each module will contain informations about future plans and possible improvements and types of contributions that would be accepted. I do not want to discourage any potential contributors, so feel free to discuss potential changes beforehand in [Issues](https://github.com/ivorne/ivorium/issues) (label `bug` or `enhancement`). I will tell you if I am interested in such a modification, will give advices for its possible implementation, and will provide conditions under which such contribution will be accepted. Straight bugs are very likely to be accepted so do not be afraid to make a Pull request.
 
 I would like to hear about your experience trying out ivorium. Did you have any problems understanding something? Does something need more explaining or better documentation? What do you like and dislike? Tell me about your time with ivorium in [Issues](https://github.com/ivorne/ivorium/issues) with label `my-story` so I have a better idea who I am collaborating with.
+
+## Projects that use ivorium
+#### Elor
+Small 48-hour gamejam project, not open-sourced. Play in web browser: https://ivorne.github.io/elor/game.html.
+
+![screenshot](https://ivorne.github.io/elor/screenshot.png)

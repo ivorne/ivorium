@@ -5,6 +5,7 @@
 #include "ivorium_graphics/ivorium_graphics.hpp"
 #include "ivorium_systems/ivorium_systems.hpp"
 #include "ivorium_UI/ivorium_UI.hpp"
+#include "ivorium_model/ivorium_model.hpp"
 
 namespace iv
 {
