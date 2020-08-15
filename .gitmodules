@@ -22,3 +22,6 @@
 [submodule "libs/soloud"]
 	path = libs/soloud
 	url = https://github.com/ivorne/soloud.git
+[submodule "libs/doxyboot-cmake"]
+	path = libs/doxyboot-cmake
+	url = https://github.com/ivorne/doxyboot-cmake.git

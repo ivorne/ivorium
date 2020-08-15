@@ -187,5 +187,9 @@ if( IV_GLPLATFORM_GLFM )
 	
 endif()
 
-#------------- doxygen --------------------------------
-include( "doxygen/ivorium_doc.cmake" )
+#------------- documentation --------------------------------
+add_subdirectory( "libs/doxyboot-cmake" )
+
+set( DOXYBOOT_HTML_HEADER "doxyboot/header.html" )
+set( DOXYBOOT_HTML_FOOTER "doxyboot/footer.html" )
+doxyboot_add_docs( ivorium_doc ivorium "src" )

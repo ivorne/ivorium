@@ -17,18 +17,18 @@ In contrast with traditional game engines that focus mostly on providing graphic
   * **Resource management system** - Seamlessly extandable, with compile-time resource preparation.
   * **Input processing system** - Uses semantic input tree to determine input priorities and provides flexible input binding management.
   * **Diagnostics** - Both for framework code and gameplay code, with user-definable logging channels and filters and with complete state dumps.
-  * **Common gameplay modules** - Basic and advanced components that make up games - Entity2D, PhysicalBody2D, GameState, Ability, etc.
+  * **Common gameplay modules** - Collection of standard Model, View and Behavior classes for common game use cases. Things like Entity2D for general entity abstraction, Physical2D for PlayRho physics, Ability for activatable abilities, etc.
 
 ## Fetch and build
 Recommended way of starting with ivorium is by cloning the example project [ivorne/iv_example](https://github.com/ivorne/iv_example). Follow instructions in README.md of that project.
 
-To incorporate Ivorium, clone it into subdirectory of your project, then build it as CMake library.
+To use Ivorium, clone it into subdirectory in your project, then build and link it as CMake library.
 Use [ivorne/iv_rctools](https://github.com/ivorne/iv_rctools) to prepare (textures, shaders, fonts, ...) for use with the framework.
-Other libraries, such as [ivorne/iv_components](https://github.com/ivorne/iv_components), can be added as additional subdirectories and linked with CMake.
+Other libraries depending on ivorium, such as [ivorne/iv_components](https://github.com/ivorne/iv_components), can be added as additional subdirectories and linked with CMake.
 
 ## Community
 Ivorium is in early stages of its transition to open-source. Documentation is currently being worked on. Some important parts of Ivorium may not be easy to find or understand, so take it easy and do not get too frustrated trying it out. Current example project is very bare-bones, it does not even use [ivorne/iv_components](https://github.com/ivorne/iv_components) module. More examples will be created / open-sourced.
 
 This project is open to contributions with some limitations. Documentation of each module will contain informations about future plans and possible improvements and types of contributions that would be accepted. I do not want to discourage any potential contributors, so feel free to discuss potential changes beforehand in [Issues](https://github.com/ivorne/ivorium/issues) (label `bug` or `enhancement`). I will tell you if I am interested in such a modification, will give advices for its possible implementation, and will provide conditions under which such contribution will be accepted. Straight bugs are very likely to be accepted so do not be afraid to make a Pull request.
 
-I would like to hear about your experience trying ivorium out. Did you have any problems understanding something? Does something need more explaining or better documentation? What do you use ivorium for? What do you like and dislike? Tell me about your time with ivorium in [Issues](https://github.com/ivorne/ivorium/issues) with label `my-story` so I have a better idea who I am collaborating with.
+I would like to hear about your experience trying out ivorium. Did you have any problems understanding something? Does something need more explaining or better documentation? What do you like and dislike? Tell me about your time with ivorium in [Issues](https://github.com/ivorne/ivorium/issues) with label `my-story` so I have a better idea who I am collaborating with.
