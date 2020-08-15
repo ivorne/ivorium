@@ -19,6 +19,9 @@ public:
     using RenderTarget::frame_close;
 };
 
+/**
+    \ingroup Game
+*/
 class GlfwWindow : public Window
 {
 public:

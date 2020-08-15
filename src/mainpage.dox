@@ -1,0 +1,23 @@
+/**
+\mainpage Ivorium
+
+Welcome to the ivorium documentation.
+
+The following chapters, in order, outline flexible game development process ivorium was built for.
+
+#### General:
+  - \ref Game - Setup the core game loop, object instacing and basic debugging.
+
+#### Model:
+  - Attributes - Learn about this universal data storage class that lets you react to changes through callbacks.
+  - ModelTools - Build data model for your game. What is your game really about and how will you structure its core gameplay data? [ ](/Attributes in model, compound models, World/Component/listener - move from iv_components)
+  
+#### View:
+  - \ref Elements - Visualize your data model using Elements scene tree.
+  - Animations - Enhance your scene tree with adaptive animations.
+  - Input - Setup input nodes and react to input events to allow player interaction.
+
+#### Behavior:
+  - BehaviorTools - Make your model move. Build simulations and setup complex behavioral interactions. [ ](/random system, time system, simulation control (some simulation class that has fixed update and calls everyone and is intercorporated with iv_components/GameState renamed to SimulationState) - only thing in this doc that is in fact part of iv_components)
+
+*/

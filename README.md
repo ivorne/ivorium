@@ -4,6 +4,9 @@ It allows you to ommit, modify or completely rewrite most of its parts in case t
 All new code can be easily integrated with the rest of the framework in order to leverage its robust debugging capabilities and to cleanly interface with existing code.
 In contrast with traditional game engines that focus mostly on providing graphics, physics and other multimedia and simulation capabilities, Ivorium is mainly concerned with clean, robust and scalable gameplay development.
 
+  * [API Reference](https://ivorne.github.io/ivorium)
+  * [Example project](https://github.com/ivorne/iv_example)
+  
 ## Features
   * **CMake** - Build system.
   * **Git submodules** - For dependency management, giving powerful multiplatform support to the build system.
@@ -17,15 +20,15 @@ In contrast with traditional game engines that focus mostly on providing graphic
   * **Common gameplay modules** - Basic and advanced components that make up games - Entity2D, PhysicalBody2D, GameState, Ability, etc.
 
 ## Fetch and build
-Ivorium is meant to be used as git submodule in your project and built as CMake library linked with your code.
-Most dependencies are pulled in as git submodules to `ivorium/libs` subdirectory.
-Python project [ivorne/iv_rctools](https://github.com/ivorne/iv_rctools) can be used to prepare and index resources (textures, shaders, fonts, ...) for use within the framework. Other plugins / modules, such as [ivorne/iv_components](https://github.com/ivorne/iv_components), can also be added as git submodules and linked as CMake targets.
+Recommended way of starting with ivorium is by cloning the example project [ivorne/iv_example](https://github.com/ivorne/iv_example). Follow instructions in README.md of that project.
 
-Suggested way of starting with Ivorium is by cloning and then extending example project [ivorne/iv_example](https://github.com/ivorne/iv_example). Follow instructions in README.md of that project.
+To incorporate Ivorium, clone it into subdirectory of your project, then build it as CMake library.
+Use [ivorne/iv_rctools](https://github.com/ivorne/iv_rctools) to prepare (textures, shaders, fonts, ...) for use with the framework.
+Other libraries, such as [ivorne/iv_components](https://github.com/ivorne/iv_components), can be added as additional subdirectories and linked with CMake.
 
 ## Community
 Ivorium is in early stages of its transition to open-source. Documentation is currently being worked on. Some important parts of Ivorium may not be easy to find or understand, so take it easy and do not get too frustrated trying it out. Current example project is very bare-bones, it does not even use [ivorne/iv_components](https://github.com/ivorne/iv_components) module. More examples will be created / open-sourced.
 
-This project is open to contributions with some limitations. Documentation of each module will contain information about future plans and improvements and types of contributions that would gladly be accepted. I do not want to discourage any potential contributors, so feel free to discuss potential changes beforehand in [Issues](https://github.com/ivorne/ivorium/issues) (label `bug` or `enhancement`). I will tell you if I am interested in such a modification, will give advices for possible implementation, and will provide conditions under which it will be accepted. Straight bugs are very likely to be accepted so do not be afraid to make a Pull request.
+This project is open to contributions with some limitations. Documentation of each module will contain informations about future plans and possible improvements and types of contributions that would be accepted. I do not want to discourage any potential contributors, so feel free to discuss potential changes beforehand in [Issues](https://github.com/ivorne/ivorium/issues) (label `bug` or `enhancement`). I will tell you if I am interested in such a modification, will give advices for its possible implementation, and will provide conditions under which such contribution will be accepted. Straight bugs are very likely to be accepted so do not be afraid to make a Pull request.
 
-And I would like to hear about your experience trying Ivorium out. Did you have any problems understanding something? Does something need more explaining or better documentation? What do you use Ivorium for? What do you like and dislike? Tell me about your time with Ivorium in [Issues](https://github.com/ivorne/ivorium/issues) with label `my-story` so I have better idea who I am developing for.
+I would like to hear about your experience trying ivorium out. Did you have any problems understanding something? Does something need more explaining or better documentation? What do you use ivorium for? What do you like and dislike? Tell me about your time with ivorium in [Issues](https://github.com/ivorne/ivorium/issues) with label `my-story` so I have a better idea who I am collaborating with.

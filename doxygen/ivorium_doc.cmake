@@ -29,6 +29,7 @@ if( DOXYGEN_FOUND )
     set( DOXYGEN_EXTRACT_ALL "YES" )
     set( DOXYGEN_SORT_MEMBER_DOCS "NO" )
     set( DOXYGEN_GENERATE_TAGFILE "${CMAKE_CURRENT_BINARY_DIR}/html/ivorium.tag" )
+    set( DOXYGEN_SHOW_NAMESPACES "NO" )
     
     # bugs
     set( DOXYGEN_SOURCE_TOOLTIPS "NO" )  # does not work, causes errors in console and disrupts bootstrap scripts
