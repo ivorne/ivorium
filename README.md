@@ -4,7 +4,7 @@ It allows you to ommit, modify or completely rewrite most of its parts in case t
 All new code can be easily integrated with the rest of the framework in order to leverage its robust debugging capabilities and to cleanly interface with existing code.
 In contrast with traditional game engines that focus mostly on providing graphics, physics and other multimedia and simulation capabilities, Ivorium is mainly concerned with clean, robust and scalable gameplay development.
 
-  * [API Reference](https://ivorne.github.io/ivorium)
+  * [Documentation](https://ivorne.github.io/ivorium)
   * [Example project](https://github.com/ivorne/iv_example)
   
 ## Features
@@ -25,6 +25,14 @@ Recommended way of starting with ivorium is by cloning the example project [ivor
 To use Ivorium, clone it into subdirectory in your project, then build and link it as CMake library.
 Use [ivorne/iv_rctools](https://github.com/ivorne/iv_rctools) to prepare (textures, shaders, fonts, ...) for use with the framework.
 Other libraries depending on ivorium, such as [ivorne/iv_components](https://github.com/ivorne/iv_components), can be added as additional subdirectories and linked with CMake.
+
+Ivorium uses:
+  - [CMake >=3.10](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html) for build project generation
+  - [GLFW](https://www.glfw.org/docs/latest/compile_guide.html#compile_cmake) for windowing on desktop platforms
+  - [GLFM](https://github.com/brackeen/glfm#build-the-example-glfm-projects) for windowing on mobile platforms and Emscripten (web)
+  - [SoLoud](https://github.com/ivorne/soloud/blob/master/contrib/Configure.cmake) for sound support
+
+All guides that apply to building with those projects should also apply to building with ivorium.
 
 ## Community
 Ivorium is in early stages of its transition to open-source. Documentation is currently being worked on. Some important parts of Ivorium may not be easy to find or understand, so take it easy and do not get too frustrated trying it out. Current example project is very bare-bones, it does not even use [ivorne/iv_components](https://github.com/ivorne/iv_components) module. More examples will be created / open-sourced.

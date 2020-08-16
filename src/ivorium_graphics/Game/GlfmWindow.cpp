@@ -3,7 +3,7 @@
 
 #if IV_GLPLATFORM_GLFM
 
-#include <ivorium_core.hpp>
+#include <ivorium_core/ivorium_core.hpp>
 
 #include <glfm.h>
 #include <utf8.h>
@@ -383,7 +383,7 @@ bool GlfmWindow::KeyFunc( GLFMKey keyCode, GLFMKeyAction action, int modifiers )
 
 void GlfmWindow::CharFunc( const char * value, int modifiers )
 {
-    if( ivorium::utf8_size( value ) != 1 )
+    if( iv::utf8_size( value ) != 1 )
         return;
     
     this->_current_character = ::utf8::next( value, value + strlen( value ) );

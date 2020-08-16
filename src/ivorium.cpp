@@ -59,7 +59,9 @@ void ivorium_init()
 void ivorium_destroy()
 {
     FreeImage_DeInitialise();
+#if IV_GLPLATFORM_GLFW
     glfwTerminate();
+#endif
     
     StreamResourceProvider::UnregisterAllTypes();
     VirtualResourceProvider::UnregisterAllTypes();
