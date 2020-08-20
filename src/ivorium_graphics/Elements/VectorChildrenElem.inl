@@ -5,6 +5,8 @@ template< class ChildT >
 VectorChildrenElem< ChildT >::VectorChildrenElem( Instance * inst ) :
     Elem( inst ),
     cm( inst, this, "VectorChildrenElem" ),
+    children(),
+    children_dirty( true ),
     heap( inst, &this->cm )
 {
     this->cm.inherits( this->Elem::cm );

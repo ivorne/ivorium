@@ -14,13 +14,16 @@ OneChildElem< ChildT >::OneChildElem( Instance * inst ) :
 template< class ChildT >
 OneChildElem< ChildT >::~OneChildElem()
 {
-    // elem
-    this->child.Get()->elem()->elem_setParent( nullptr );
-    
-    // input
-    this->child.Get()->elem()->input_treeRefresh();
-    this->child.Get()->elem()->input_deactivate();
-    this->child.Get()->elem()->input_setParent( nullptr );
+    if( this->child.Get() )
+    {
+        // elem
+        this->child.Get()->elem()->elem_setParent( nullptr );
+        
+        // input
+        this->child.Get()->elem()->input_treeRefresh();
+        this->child.Get()->elem()->input_deactivate();
+        this->child.Get()->elem()->input_setParent( nullptr );
+    }
 }
 
 template< class ChildT >

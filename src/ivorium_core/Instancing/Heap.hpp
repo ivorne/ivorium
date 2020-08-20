@@ -81,6 +81,12 @@ private:
     template< class T >
     static void DeleterImpl( void * ptr );
     
+    template< class T, std::enable_if_t< std::is_polymorphic_v< T >, int > = 0 >
+    static void * identity_cast( T * ptr );
+    
+    template< class T, std::enable_if_t< !std::is_polymorphic_v< T >, int > = 0 >
+    static void * identity_cast( T * ptr );
+    
 private:
     Instance * inst;
     ClientMarker * cm;

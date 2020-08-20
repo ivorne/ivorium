@@ -11,8 +11,20 @@ template< class T, class ... CArgs >
 T * Heap::create( CArgs const & ... cargs )
 {
     T * t = new T( cargs ... );
-    this->items.push_back( Item( dynamic_cast< void * >( t ), &DeleterImpl< T > ) );
+    this->items.push_back( Item( Heap::identity_cast( t ), &DeleterImpl< T > ) );
     return t;
+}
+
+template< class T, std::enable_if_t< std::is_polymorphic_v< T >, int > >
+void * Heap::identity_cast( T * ptr )
+{
+    return dynamic_cast< void * >( ptr );
+}
+    
+template< class T, std::enable_if_t< !std::is_polymorphic_v< T >, int > >
+void * Heap::identity_cast( T * ptr )
+{
+    return static_cast< void * >( ptr );
 }
 
 template< class T, class ... CArgs >
@@ -32,7 +44,7 @@ T * Heap::createClient( CArgs const & ... cargs )
 template< class T >
 void Heap::destroy( T * ptr )
 {
-    void * identity = dynamic_cast< void * >( ptr );
+    void * identity = Heap::identity_cast( ptr );
     
     auto it = std::find_if( this->items.begin(), this->items.end(), [ identity ]( Item const & item ){ return item.identity == identity; } );
     

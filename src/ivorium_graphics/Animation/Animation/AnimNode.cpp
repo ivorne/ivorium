@@ -16,6 +16,8 @@ AnimNodeI::AnimNodeI( Instance * inst ) :
     _parent( nullptr ),
     _children(),
     _activation_id( std::nullopt ),
+    _active_cooldown( 0 ),
+    _active( false ),
     _distance_start( 0 ),
     _distance_end( 0 ),
     _distance_working( 0 ),
