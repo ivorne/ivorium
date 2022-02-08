@@ -45,7 +45,7 @@ Each frame, before all the renderables are rendered, whole scene tree is travers
 This refresh has three stages: down-phase of first pass, up-phase of first pass and second pass.
     1. Down-phase of first pass is not that important, it mainly refreshes \ref iv::SlotChild::expectedSize which is not used by many Elements. Tree is traversed from root to children.
     2. Up-phase of first pass aggregates so called **synthesized parameters**. It is mainly \ref iv::SlotChild::preferredSize which is used by containers to resize their layouts. Tree is traversed from children to root in this stage. Renderable Elements also assign themselves to render queue in this stage (they must register each frame).
-    3. In second pass, containers assign so called **inherited parameters** to their children. Best example of such parameter is \ref iv::SlotChild::size. Tree is traversed from children to root again. The second pass is not called each frame on each Element, Elements have to request second pass during first pass using \ref iv::ElementRenderer::QueueSecondPass and then call \ref iv::ElementRenderer::DequeueSecondPass during second pass.
+    3. In second pass, containers assign so called **inherited parameters** to their children. Best example of such parameter is \ref iv::SlotChild::size. Tree is traversed from root to children again. The second pass is not called each frame on each Element, Elements have to request second pass during first pass using \ref iv::ElementRenderer::QueueSecondPass and then call \ref iv::ElementRenderer::DequeueSecondPass during second pass.
 
 Most attributes used in scene tree are \ref iv::DirtyAttr.
 Apart from given value, it contains dirty flag that is set to true each time value is modified.
